@@ -1,0 +1,1 @@
+globalLib({aa: 123})
