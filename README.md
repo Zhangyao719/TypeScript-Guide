@@ -435,34 +435,51 @@ function(e: Event) {}
 ## 枚举(enum名字注解)
 
 ```js
-// 给一组数值赋予友好的名字
-// 给Gender对象的三个变量先取三个名字
-enum Gender { male, female, unknow }
+// 给一组数值赋予友好的名字(即字段)
+// 按约定 枚举名称为大写的单数形式, 枚举中的键也为大写// 
+enum Gender { Male, Female, Unknow }
 
-// 使用枚举类型为一组数值赋予名字
 let gender: Gender = Gender.male  (// 即 gender = 0)
 
 let obj = {
     gender: Gender.male
 }
+
+obj.gender // output => 0
 ```
 
-1. 默认枚举从0开始给元素编号, 也可以手动指定成员的值
+- 默认枚举从0开始给元素编号, 也可以手动指定成员的值
 
-   ```js
-   enum Color { Red = 1, Green, Blue } // 下标从1开始
-   enum Color { Red = 1, Green = 2, Blue = 4 } // 全部手动赋值
-   ```
 
-2. 可以使用元素的名称, 也可以使用下标
+```js
+enum Color { Red = 1, Green, Blue } // 下标从1开始
+enum Color { Red = 1, Green = 2, Blue = 4 } // 全部手动赋值
+```
 
-   ```js
-   enum Color {Red = 1, Green, Blue}
-   let colorName: string = Color[2];
-   
-   console.log(colorName);  // 显示'Green'因为上面代码里它的下标是2
-   ```
-   
+- 可以使用元素的名称, 也可以使用下标
+
+
+```js
+enum Color {Red = 1, Green, Blue}
+let colorName: string = Color[2];
+
+console.log(colorName);  // 显示'Green'因为上面代码里它的下标是2
+```
+
+- 反向引用
+
+```bash
+# 允许通过值或者键互相访问:
+Gender.Male  // 0
+Gender[0]    // 'Male'
+
+# 使用 const 禁用反向查找
+const enum Language {
+	English,
+	Spanlish,
+	Russian
+}
+```
 
 > **`本质`**: 就是一个对象
 
