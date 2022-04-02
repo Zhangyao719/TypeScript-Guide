@@ -5,7 +5,7 @@
    "diagnostics": true,               // 打印诊断信息
 
    "target": "ES5",        // 目标语言的版本
-   "module": "commonjs",   // 生成代码的模块标准
+   "module": "esnext",   // 生成代码的模块标准 "commonjs" "esnext"(可以使用动态导入)
    "outFile": "./app.js",  // 将多个相互依赖的文件生成一个文件, 可用在AMD模块中
 
    "lib": [], // TS 需要引用的库 即声明文件, es5默认"dom", "es5", "scripthost"
@@ -49,7 +49,7 @@
     "noFallthroughCasesInSwitch": true, // 防止switch 语句贯穿
     "noImplicitReturns": true,    // 每个分支都要有返回值
 
-    "esModuleInterop": true,      // 允许export = 导出 有import from 导入
+    "esModuleInterop": true,      // 允许commonJS 和 esModule 互相操作
     "allowUmdGlobalAccess": true, // 允许在模块中访问 UMD 全局变量
     "moduleResolution": "node",   // 模块解析策略
     "baseUrl": "./",              // 解析非相对模块的基地址
