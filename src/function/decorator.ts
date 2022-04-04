@@ -23,3 +23,14 @@ function serialzable<
     }
   }
 }
+
+@serialzable
+class Payload {
+  getValue() {
+    return 123
+  }
+}
+
+const instance = new Payload()
+const res = instance.serialize()
+// error: ts 假定装饰器不改变装饰目标的结构, 即不增加或删除方法和属性
