@@ -32,5 +32,17 @@ class Payload {
 }
 
 const instance = new Payload()
-const res = instance.serialize()
+// const res = instance.serialize()
 // error: ts 假定装饰器不改变装饰目标的结构, 即不增加或删除方法和属性
+
+// 解决方法:
+// 方法一: 扩展接口 + as 类型断言
+interface NewPayload extends Payload {
+  serialize(): string
+}
+const instance1 = new Payload() as NewPayload
+instance1.serialize()
+
+// 方法二: 直接使用 serialzable 替代装饰器
+const decoratorPayload = serialzable(Payload)
+new decoratorPayload().serialize()
