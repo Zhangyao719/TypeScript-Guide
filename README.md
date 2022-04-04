@@ -2280,3 +2280,20 @@ $tsc -b src/server --verbose // -b 路径 单独构建一个工程, --verbose �
 > https://blog.csdn.net/yehuozhili/article/details/108567297
 >
 > https://www.jianshu.com/p/1e786ce4786c
+
+## 装饰器
+
+https://juejin.cn/post/6844904090233733134#heading-0
+
+
+## vue class component
+
+> vue2 基于类的组件
+
+文档地址:
+
+中文文档: https://www.jianshu.com/p/adfe275b731e
+
+官方文档: https://class-component.vuejs.org/
+
+github: https://github.com/vuejs/vue-class-component
