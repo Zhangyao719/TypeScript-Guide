@@ -1264,6 +1264,18 @@ class Person {
 const admin: Person = new Person('James', 18);
 ```
 
+- 类本身的类型
+
+> 类 构造函数 静态成员的类型
+
+```ts
+const User: typeof Person = Person
+const user: Person = new User('Tom', 20);
+
+// type of 就是构造签名 返回类型为 class
+type of class 就是 new (...args: any[]) => class
+```
+
 
 
 
