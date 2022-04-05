@@ -1247,6 +1247,23 @@ s = new Animal() // 不可以new抽象类
 s = new Son() // 正确
 s.makeSound() // 正确
 ```
+##### 类作为类型
+
+- 实例的类型
+
+> 类 作为类型使用时 代表这 当前这个实例的类型
+
+```ts
+class Person {
+    constructor(
+    	public name: string,
+		public age: number,
+    ) {}
+}
+
+const admin: Person = new Person('James', 18);
+```
+
 
 
 
