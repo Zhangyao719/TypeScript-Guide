@@ -26,6 +26,7 @@ chirp(new Bird)
 chirp(new Crow)
 
 // ! 函数当参数时, 返回类型的比较:
+// ! 子类型可以 超类型不可以
 function birdToBird(bird: Bird): Bird {
   return new Bird()
 }
@@ -43,4 +44,15 @@ clone(birdToBird)
 clone(birdToCrow)
 clone(birdToAnimal) // error birdToAnimal 返回值 类型为 Animal, 是 Bird 超类型, 不符合函数逆变的规则
 
+// ! 函数当参数时, 该函数的参数类型的比较:
+// ! 子类型不可以 超类型不可以
+function animalToBird(a: Animal): Bird {
+  return new Bird()
+}
+function crowToBird(a: Crow): Bird {
+  return new Bird()
+}
+
+clone(animalToBird)
+clone(crowToBird) // error crowToBird 的参数 类型为 Crow, 是 Bird 子类型, 不符合函数逆变的规则
 
